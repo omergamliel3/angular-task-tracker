@@ -1,15 +1,16 @@
 <app-header></app-header>
+
 <div class="container">
-    <ng-template #welcome>
+    <app-loading-spinner *ngIf="this.loading"></app-loading-spinner>
+    <ng-template #message>
         <h2>Your Tasks, {{authService.user.username}}</h2>
     </ng-template>
-    <app-add-task *ngIf="showAddTaskForm; else welcome"
+    <app-add-task *ngIf="showAddTaskForm; else message"
                   (onAddTask)="addTask($event)"></app-add-task>
     <app-tasks-list
             *ngIf="!this.loading && this.tasks"
             [tasks]="tasks"
             (onDeleteTask)="deleteTask($event)"
             (onToggleReminder)="toggleReminder($event)"></app-tasks-list>
-    <app-loading-spinner *ngIf="this.loading"></app-loading-spinner>
 </div>
 <app-footer></app-footer>
