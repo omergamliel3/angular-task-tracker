@@ -2,6 +2,7 @@
     <h1 (click)="navigateToHomePage()">{{title}}</h1>
     <div class="button-group">
         <app-button color="blue" text="Reload" (onClicked)="onReload()"></app-button>
-        <app-button color="green" text="Add" (onClicked)="toggleAddTask()"></app-button>
+        <app-button [color]="showAddTaskForm ? 'red' : 'green'"
+                    text="Add" (onClicked)="toggleAddTask()"></app-button>
     </div>
 </header>

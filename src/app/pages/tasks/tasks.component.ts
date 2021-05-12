@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Task } from '../../core/models/task.model';
 import { TaskService } from '../../core/services/task.service';
 import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { distinctUntilChanged, takeUntil } from 'rxjs/operators';
 import { AuthService } from '../../core/services/auth.service';
 import { UiService } from '../../core/services/ui.service';
 
@@ -29,9 +29,11 @@ export class TasksComponent implements OnInit, OnDestroy {
     }
 
     listenToAddTaskFormToggles(): void {
-        this.uiService.onToggleAddTaskForm.subscribe((value => {
-            this.showAddTaskForm = value;
-        }));
+        this.uiService.onToggleAddTaskForm
+            .pipe(takeUntil(this.destroy$), distinctUntilChanged())
+            .subscribe((value => {
+                this.showAddTaskForm = value;
+            }));
     }
 
     ngOnDestroy(): void {

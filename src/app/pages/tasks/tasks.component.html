@@ -1,7 +1,7 @@
 <app-header></app-header>
 <div class="container">
     <ng-template #welcome>
-        <h2>Your Task, {{authService.user.username}}</h2>
+        <h2>Your Tasks, {{authService.user.username}}</h2>
     </ng-template>
     <app-add-task *ngIf="showAddTaskForm; else welcome"
                   (onAddTask)="addTask($event)"></app-add-task>
@@ -12,3 +12,4 @@
             (onToggleReminder)="toggleReminder($event)"></app-tasks-list>
     <app-loading-spinner *ngIf="this.loading"></app-loading-spinner>
 </div>
+<app-footer></app-footer>

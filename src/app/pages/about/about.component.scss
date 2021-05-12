@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100vw;
+  height: 90vh;
+
+  .card {
+    padding: 40px;
+  }
+
+  div > * {
+    margin-bottom: 7px;
+  }
+}
