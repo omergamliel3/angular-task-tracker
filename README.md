@@ -1,6 +1,6 @@
 # Angular Task Tracker Web App
 
-Simple task tracker web app, make with Angular.
+Simple task tracker web app, made with Angular.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
 
