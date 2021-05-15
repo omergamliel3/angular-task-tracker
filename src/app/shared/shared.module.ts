@@ -7,9 +7,20 @@ import { FooterComponent } from './components/footer/footer.component';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
-    declarations: [HeaderComponent, LoadingSpinnerComponent, ButtonComponent, FooterComponent],
+    declarations: [
+        HeaderComponent,
+        LoadingSpinnerComponent,
+        ButtonComponent,
+        FooterComponent
+    ],
     imports: [CommonModule, RouterModule],
-    exports: [CommonModule, HeaderComponent, LoadingSpinnerComponent, ButtonComponent, FooterComponent]
+    exports: [
+        CommonModule,
+        HeaderComponent,
+        LoadingSpinnerComponent,
+        ButtonComponent,
+        FooterComponent
+    ]
 })
 export class SharedModule {
 }

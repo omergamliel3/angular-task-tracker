@@ -11,7 +11,6 @@ import { Subject } from 'rxjs';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
     private destroy$ = new Subject<void>();
-    public readonly title = 'Tasks Tracker';
     showAddTaskForm: boolean;
 
     constructor(private router: Router,
